@@ -1,0 +1,482 @@
+:root {
+    --main-font: "Arvo", serif ;
+    --second-font: "Open Sans", sans-serif;
+    --third-font: "Montserrat", sans-serif;
+}
+*{
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+body{
+    margin: 0;
+    font-family: var(--second-font);
+}
+h3 {
+    font-size: 22px;
+    color: rgb(51, 51, 51) ;
+    line-height: 32px;
+    font-weight: 400;
+    font-family: var(--main-font);
+}
+.title {
+    color: #9fa3a7;
+    font-family: var(--third-font);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+.mini-caps {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    width: fit-content;
+    color: white;
+}
+.btn-learn {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-decoration: none;
+}
+.parent {
+    display: grid;
+    grid-template-areas: 
+        "section1 section1 section2  section2"
+        "section3 section4 section4  section5"
+        "section6 section7 section7  section5"
+        "section8 section9 section10 section10";
+    grid-auto-rows: 1fr 1fr 1fr 0.5fr;
+    grid-template-columns: repeat(4 , 25%);
+}
+
+@media (max-width:991px) {
+    .parent { 
+        grid-template-areas: 
+        "section2  section2  section2   section2"
+        "section1  section1  section1   section1"
+        "section3  section3  section6   section6"
+        "section4  section4  section4   section4"
+        "section8  section8  section5   section5"
+        "section7  section7  section5   section5"
+        "section9  section9  section9   section9"
+        "section10 section10 section10  section10";
+        grid-template-rows: repeat(8 , auto);
+    }  
+}
+@media (max-width:479px) {
+    .parent { 
+        grid-template-rows: repeat(10 , auto);
+        grid-template-columns:  100%;
+        grid-template-areas:  
+        "section2"
+        "section1"
+        "section3"
+        "section6"
+        "section4"
+        "section8"
+        "section7"
+        "section5"
+        "section9"
+        "section10";
+    }
+}
+/* section 1 */
+.parent .section1 {
+    grid-area: section1;
+    display: flex;
+    padding: 0 25px;
+    justify-content: space-around;
+    align-items: center;
+}
+.parent .section1 .photo {
+    align-self: flex-end;
+    margin-top: 40px;
+}
+.parent .section1 .photo img{ 
+    width: 249px;
+    display: block;
+}
+.parent .section1 .info{
+    width: 31%;
+}
+.parent .section1 .info h3{ 
+    margin-top: 12px;
+}
+.parent .section1 .info p {
+    color: rgb(159, 163, 167);
+    font-size: 14px;
+    font-family: var(--second-font);
+    line-height: 26px;
+    margin: 0;
+}
+@media (max-width:479px) {
+    .parent .section1 { 
+        flex-direction: column;
+    }
+    .parent .section1 .info { 
+        width: 100%;
+        padding-top: 25px;
+    }
+    .parent .section1 .photo { 
+        align-self: inherit;
+    }
+    .parent .section1 .photo img { 
+        position: relative;
+        left: -6%;
+    }
+}
+/* section 2 */
+.parent .section2 {
+    grid-area: section2;
+    background-color: #F7F8F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.parent .section2 .content{ 
+    text-align: center;
+}
+.parent .section2 .content .title {
+    margin: 0;
+}
+.parent .section2 .content h1{  
+    color: rgb(51, 51, 51);
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 400;
+    font-family: var(--main-font);
+    margin: 25px 0 15px;
+    max-width: 550px;
+}
+.parent .section2 .content a {
+    font-size: 14px;
+    color: rgb(39, 185, 194) ;
+}
+@media (max-width:991px) {
+    .parent .section2 { 
+    padding: 50px 0px;
+    }
+    .parent .section2 .content h1 { 
+        font-size: 35px ;
+        line-height: 1.4em;
+    } 
+}
+@media (max-width:479px) {
+    .parent .section2 .content h1 { 
+        font-size: 10vw;
+        max-width: 100%;
+    }
+}
+/* section 3 */
+.parent .section3 {
+    grid-area: section3;
+    background-color: #F05638;  
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+.parent .section3  img { 
+    max-width: 100%;
+    width: 319px;
+}
+.parent .section3 h3 {
+    color: rgb(255, 251, 251);
+    margin: 10px 0 0;
+    max-width: 200px;
+    font-weight: 700;
+}
+.parent .section3 a { 
+    color: rgb(255, 200, 10);
+    margin: 20px 0 0;
+}
+.parent .section3 a b{ 
+    font-size: 16px;
+}
+/* section 4 */
+.parent .section4 {
+    grid-area: section4;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 68px 30px 0;
+}
+.parent .section4 .column { 
+    width: 30%;
+}
+.parent .section4 .column:nth-of-type(2) { 
+    width: 40%;
+}
+.parent .section4 .column img{  
+    position: relative;
+    width: 450px;
+    display: block;
+    left: -288px;
+    bottom: -8px;
+}
+.parent .section4 .column .title{  
+    margin: 0;
+}
+.parent .section4 .column h3 { 
+    margin-top: 12px;
+    width: 180px;
+}
+.parent .section4 .column p {
+    font-size: 14px;
+    color: rgb(159, 163, 167);
+    line-height: 26px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.parent .section4 .column a {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(39, 185, 194);
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+@media (max-width:479px) {
+    .parent .section4  {
+        display: block;
+        padding-bottom: 68px;
+    }
+    .parent .section4 .column , 
+    .parent .section4 .column:nth-of-type(2) ,
+    .parent .section4 .column h3 { 
+        width: 100%;
+    }
+    .parent .section4 .column img {
+        width: 200%;
+        left: 50%;
+        transform: translateX(-82%); 
+    }
+    .parent .section4 .column p { 
+        margin-top: 40px;
+    }
+}
+ /* section 5 */
+.parent .section5 {
+    grid-area: section5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background-color: #8F76BC;
+    color: white;
+    padding-bottom: 70px;
+}
+.parent .section5 .circle {
+    width: 373px;
+    height: 373px;
+    border-radius: 50%;
+    background-color: #8166B0;
+    text-align: center;
+    margin-top: 40px;
+}
+.parent .section5 .circle img{ 
+    width: 239px;
+    max-width: 100%;
+    margin-left: -12px;
+}
+.parent .section5 .circle p {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    line-height: 23px;
+}
+.parent .section5 .circle p:first-of-type { 
+    background-image: url(../images/icon.png);
+    padding: 1px 12px 1px 30px;
+    border-radius: 10px;
+    background-color: #8B72B6;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 12px;
+    width: fit-content;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+.parent .section5 .circle p:last-of-type { 
+    font-size: 12px;
+    margin-top: 0;
+    line-height: 20px;
+    font-family: var(--third-font);
+}
+.parent .section5 h2 {
+    font-family: var(--main-font);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.parent .section5 .text {
+    margin: 0;
+    text-align: center;
+    max-width: 250px;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+.parent .section5 a {
+    background-color: #FFC80A;
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 2.5px;
+    padding: 13px 28px;
+    border-radius: 25px;
+}
+/* section 6 */
+.parent .section6 {
+    grid-area: section6;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F8F9;
+    color: black;
+    padding: 30px 0;
+}
+.parent .section6  img { 
+    max-width: 100%;
+    width: 248px;
+    position: relative;
+    left: -25px;
+}
+.parent .section6 h3 {
+    margin: 10px 0 20px;
+    max-width: 56%;
+    text-align: center;
+}
+.parent .section6 a { 
+    color: rgb(39, 185, 194);
+    margin: 20px 0 0;
+}
+.parent .section6 a b{ 
+    font-size: 16px;
+}
+/* section 7 */
+.parent .section7{ 
+    grid-area: section7;
+    background-color: #93B6B7;
+    background-image: url(../images/BG-section7.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+}
+.parent .section7 span {
+    background-color: #FA684F;
+    position: relative;
+    left: 30px;
+    align-self: flex-start;
+}
+.parent .section7 h3{
+    color: inherit;
+    font-weight: 700;
+    max-width: 280px;
+    margin-bottom: 30px;
+}
+.parent .section7 img{ 
+    max-width: 90%;
+    position: relative;
+    left: -12%;
+}
+/* section 8 */
+.parent .section8{ 
+    grid-area: section8;
+    background-color: #38D5F4;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+}
+.parent .section8 .circle{  
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background-color: #35CFED;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.parent .section8 .circle img {  
+    max-width: 100%;
+    width: 43px;
+}
+.parent .section8 .circle h3{  
+    color: white;
+    width: 80%;
+    margin: 10px;
+}
+/* section 9 */
+.parent .section9{ 
+    grid-area: section9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+.parent .section9 span{ 
+    background-color: #7BC424;
+}
+.parent .section9 h3 {
+    width: 80%;
+    text-align: center;
+    margin-top: 10px;
+}
+/* section 10 */
+.parent .section10{ 
+    grid-area: section10;
+    display: flex;
+    background-color: #2C2C2C;
+    overflow: hidden;
+    align-items: center;
+    padding: 0 40px;
+    justify-content: center;
+}
+.parent .section10 img {
+    width: 271px;
+    max-width: 100%;
+    position: relative;
+    left: -92px;
+}
+.parent .section10 h3 {
+    color: white;
+    width: 35%;
+    margin-top: 10px;
+}
+@media (max-width:479px) { 
+    .parent .section10 { 
+        flex-direction: column;
+        padding: 0 20px 30px;
+    }
+    .parent .section10 img { 
+        left: -60px;
+        margin-bottom: -7px;
+    }
+    .parent .section10 h3 { 
+        text-align: center;
+        width: 100%;
+    }
+}
